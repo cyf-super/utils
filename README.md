@@ -7,6 +7,7 @@
 - [Storage](https://github.com/cyf-super/utils/blob/master/src/modules/storage.ts) ：封装localStorage、sessionStorage，支持设置过期时间、加密等
 - [is](https://github.com/cyf-super/utils/blob/master/src/modules/is.ts)：数据类型的判断
 - [coverload](https://github.com/cyf-super/utils/blob/master/src/modules/coverload.ts)：函数重载
+- [formatBytes](https://github.com/cyf-super/utils/blob/master/src/modules/formatBytes.ts)：格式化文件大小
 
 <p>
 

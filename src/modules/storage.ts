@@ -100,4 +100,4 @@ const LStorage = MyStorage.getInstance(localStorage)
 
 const SStorage = MyStorage.getInstance(sessionStorage)
 
-export { LStorage, SStorage };
+export { LStorage, SStorage }
