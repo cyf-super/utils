@@ -32,10 +32,11 @@ class MyStorage {
   }
 
   get(key: string) {
-    let content = this.storage.getItem(key) || '';
+    let content = this.storage.getItem(key);
+    if (!content) return null
 
     // 解密
-    if (content && isEncrypted(content)) {
+    if (isEncrypted(content)) {
       content = deCrypto(content)
     }
 
