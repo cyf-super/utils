@@ -74,7 +74,7 @@ class MyStorage {
     let cacheStr = JSON.stringify(cacheobj)
     // 是否加密
     if (crypto) {
-      cacheStr = doCrypto(cacheStr)
+      cacheStr = doCrypto(cacheStr) as string
     }
 
     this.storage.setItem(key, cacheStr);
