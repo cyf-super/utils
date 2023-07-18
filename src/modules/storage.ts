@@ -19,8 +19,8 @@ class MyStorage {
 
   /**
    * 单例模式
-   * @param type 
-   * @returns 
+   * @param type
+   * @returns
    */
   static getInstance(type: Storage) {
     const typeStr = type.toString()
@@ -32,7 +32,7 @@ class MyStorage {
   }
 
   get(key: string) {
-    let content = this.storage.getItem(key);
+    let content = this.storage.getItem(key)
     if (!content) return null
 
     // 解密
@@ -45,26 +45,35 @@ class MyStorage {
     if (cacheobj) {
       // 判断是否过期
       if (cacheobj.timer && cacheobj.timer < new Date().getTime()) {
-        this.removeKey(key);
-        return null;
+        this.removeKey(key)
+        return null
       }
-      return cacheobj.value;
+      return cacheobj.value
     }
-    return null;
+    return null
   }
-	
+
   /**
    * set 缓存数据
-   * 
+   *
    * @param key key值
-   * @param value 缓存数据 
+   * @param value 缓存数据
    * @param expire 存储时效性，单位：天，默认为永久性存储
    * @param crypto 是否进行加密，默认不加密
    */
-  set({ key, value, expire, crypto = false }: { key: string, value: unknown, expire?: number, crypto?: boolean }) {
-  
-    let cacheobj: StorageDataType = {};
-    cacheobj.value = value;
+  set({
+    key,
+    value,
+    expire,
+    crypto = false,
+  }: {
+    key: string
+    value: unknown
+    expire?: number
+    crypto?: boolean
+  }) {
+    const cacheobj: StorageDataType = {}
+    cacheobj.value = value
 
     // 是否永久性存储
     if (expire) {
@@ -77,14 +86,14 @@ class MyStorage {
       cacheStr = doCrypto(cacheStr) as string
     }
 
-    this.storage.setItem(key, cacheStr);
+    this.storage.setItem(key, cacheStr)
   }
 
   /**
    * 清空缓存
    */
   clear() {
-    this.storage.clear();
+    this.storage.clear()
   }
 
   /**
@@ -92,10 +101,9 @@ class MyStorage {
    * @param key key值
    */
   removeKey(key: string) {
-    this.storage.removeItem(key);
+    this.storage.removeItem(key)
   }
 }
-
 
 const LStorage = MyStorage.getInstance(localStorage)
 
