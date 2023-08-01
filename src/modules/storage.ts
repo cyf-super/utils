@@ -1,7 +1,7 @@
 import { doCrypto, deCrypto, isEncrypted } from './crypto'
 
-interface StorageDataType {
-  value?: unknown
+interface StorageDataType<T> {
+  value?: T
   timer?: number | string
 }
 
@@ -31,7 +31,7 @@ class MyStorage {
     return MyStorage.instances[typeStr]
   }
 
-  get(key: string) {
+  get<T>(key: string) {
     let content = this.storage.getItem(key)
     if (!content) return null
 
@@ -48,7 +48,7 @@ class MyStorage {
         this.removeKey(key)
         return null
       }
-      return cacheobj.value
+      return cacheobj.value as T
     }
     return null
   }
@@ -61,18 +61,18 @@ class MyStorage {
    * @param expire 存储时效性，单位：天，默认为永久性存储
    * @param crypto 是否进行加密，默认不加密
    */
-  set({
+  set<T>({
     key,
     value,
     expire,
     crypto = false,
   }: {
     key: string
-    value: unknown
+    value: T
     expire?: number
     crypto?: boolean
   }) {
-    const cacheobj: StorageDataType = {}
+    const cacheobj: StorageDataType<T> = {}
     cacheobj.value = value
 
     // 是否永久性存储
