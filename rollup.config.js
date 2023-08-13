@@ -2,15 +2,13 @@ import { defineConfig } from 'rollup'
 import ts from 'rollup-plugin-typescript2'
 import commonjs from '@rollup/plugin-commonjs'
 import babelPlugin from '@rollup/plugin-babel'
-import resolve from '@rollup/plugin-node-resolve'
-import globals from 'rollup-plugin-node-globals'
-import builtins from 'rollup-plugin-node-builtins'
 import dts from 'rollup-plugin-dts'
-
+import { importExportPlugin } from 'rollup-plugin-import-export'
+import json from '@rollup/plugin-json'
 
 const config = defineConfig([
-	{
-		input: ['src/index.ts'],
+  {
+    input: ['src/index.ts'],
     output: [
       {
         dir: 'dist/esm',
@@ -21,26 +19,26 @@ const config = defineConfig([
         dir: 'dist/cjs',
         format: 'cjs',
         preserveModules: true,
-      }
+      },
     ],
     plugins: [
+      importExportPlugin(),
       ts(),
       babelPlugin({ exclude: '**/node_modules/**' }),
+      json(),
       commonjs(),
-    ]
-	},
+    ],
+  },
   // 打包类型声明
   {
     input: 'src/index.ts',
     output: {
-        dir: 'dist/types',
-        format: 'esm',
-        preserveModules: true,
+      dir: 'dist/types',
+      format: 'esm',
+      preserveModules: true,
     },
-    plugins: [
-      dts()
-    ]
-  }
+    plugins: [importExportPlugin(), dts()],
+  },
 ])
 
 export default config

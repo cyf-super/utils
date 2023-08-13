@@ -1,8 +1,7 @@
-import { isNumber } from "./is"
+import { isNumber } from './is'
 
 const SIZE = 1024
 const SIZE_UNIT = ['B', 'KB', 'MB', 'GB', 'TB']
-
 
 /**
  * 将文件大小转化为 KB，MB，GB 等
