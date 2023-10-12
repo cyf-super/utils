@@ -8,6 +8,7 @@
 - [is](https://github.com/cyf-super/utils/blob/master/src/modules/is.ts)：数据类型的判断
 - [coverload](https://github.com/cyf-super/utils/blob/master/src/modules/coverload.ts)：函数重载
 - [formatBytes](https://github.com/cyf-super/utils/blob/master/src/modules/formatBytes.ts)：格式化文件大小
+- [timeOut](https://github.com/cyf-super/utils/blob/master/src/modules/timeOut.ts)：定时器、延时器
 
 <p>
 
@@ -18,7 +19,7 @@ npm i @cyf-super/utils
 ```
 
 导出工具函数：
-```
+```javaScript
 import { LStorage } from '@cyf-super/utils'
 
 ...
