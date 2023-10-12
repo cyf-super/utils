@@ -40,7 +40,7 @@ class MyStorage {
       content = deCrypto(content)
     }
 
-    const cacheobj = JSON.parse(content)
+    const cacheobj = JSON.parse(<string>content)
     // 先判断该值是否存在
     if (cacheobj) {
       // 判断是否过期

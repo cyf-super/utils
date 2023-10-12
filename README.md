@@ -8,6 +8,8 @@
 - [is](https://github.com/cyf-super/utils/blob/master/src/modules/is.ts)：数据类型的判断
 - [coverload](https://github.com/cyf-super/utils/blob/master/src/modules/coverload.ts)：函数重载
 - [formatBytes](https://github.com/cyf-super/utils/blob/master/src/modules/formatBytes.ts)：格式化文件大小
+- [openNewTag](https://github.com/cyf-super/utils/blob/master/src/modules/openNewTag.ts):打开新的tag标签页 [详情见](http://cyf-super.top/?p=272)
+- [LruCache](https://github.com/cyf-super/utils/blob/master/src/modules/LruCache.ts):LRU - 最近最少使用
 - [timeOut](https://github.com/cyf-super/utils/blob/master/src/modules/timeOut.ts)：定时器、延时器
 
 <p>
