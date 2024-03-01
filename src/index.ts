@@ -6,3 +6,5 @@ export * from './modules/formatBytes'
 export * from './modules/openNewTag'
 export * from './modules/LruCache'
 export * from './modules/timeOut'
+export * from './modules/formatTime'
+

@@ -11,6 +11,7 @@
 - [openNewTag](https://github.com/cyf-super/utils/blob/master/src/modules/openNewTag.ts):打开新的tag标签页 [详情见](http://cyf-super.top/?p=272)
 - [LruCache](https://github.com/cyf-super/utils/blob/master/src/modules/LruCache.ts):LRU - 最近最少使用
 - [timeOut](https://github.com/cyf-super/utils/blob/master/src/modules/timeOut.ts)：定时器、延时器
+- [formatTime](https://github.com/cyf-super/utils/blob/master/src/modules/formatTime.ts): 格式化时间
 
 <p>
 
